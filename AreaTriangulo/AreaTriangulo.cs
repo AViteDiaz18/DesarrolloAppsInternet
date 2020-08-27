@@ -13,7 +13,7 @@ namespace AreaTriangulo
             Console.Write("Ingrese la altura del triangulo: ");
             altura = Int32.Parse(Console.ReadLine());
             area = (Base * altura)/2;
-            Console.WriteLine("El area del trinagulo es : " + area);
+            Console.WriteLine("El area del triangulo es : " + area);
         }
     }
 }
