@@ -1,5 +1,9 @@
 ﻿using System;
-
+/*
+Desarrollo de aplicaciones en internet 
+Programa de ejercicio para ciclos 
+Alejandro Vite Diaz
+*/
 namespace Ciclos
 {
     class Program
@@ -10,17 +14,17 @@ namespace Ciclos
             int control;
             int suma = 0;
             Console.Clear();
-            if(args.Length == 0){
+            if(args.Length == 0){ // validacion de entrada de args[]
                 Menu();
                 return 1;
             }
-            opcion = int.Parse( args[0]);
+            opcion = int.Parse( args[0]); // cast a entero de args[0]
             
             switch(opcion){
                 case 1:
                     control = 1;
                     Console.WriteLine("While");
-                    while(control <= 100){
+                    while(control <= 100){ // ciclo while de 1 a 100
                         Console.Write(control + " ");
                         suma += control;
                         control ++;
@@ -32,7 +36,7 @@ namespace Ciclos
                 case 2: 
                     control = 100;
                     Console.WriteLine("Do While");
-                    do{
+                    do{ // ciclo do while de 100 a 1
                         Console.Write(control + " ");
                         suma += control;
                         control --;
@@ -43,7 +47,7 @@ namespace Ciclos
                 
                 case 3:
                     Console.WriteLine("For");
-                    for(control = 50; control <= 200; control++){
+                    for(control = 50; control <= 200; control++){ //ciclo for de 50 a 200
                         Console.Write(control + " ");
                         suma += control;
                     }
@@ -53,7 +57,7 @@ namespace Ciclos
 
                 case 4:
                     Console.WriteLine("For de pares");
-                    for(control = 2; control <= 100; control+=2){
+                    for(control = 2; control <= 100; control+=2){ // ciclo for solo pares de 2 a 100
                         Console.Write(control + " ");
                         suma += control;
                     }
@@ -63,7 +67,7 @@ namespace Ciclos
 
                 case 5:
                     Console.WriteLine("For de impares");
-                    for(control = 99; control >= 1; control-=2){
+                    for(control = 99; control >= 1; control-=2){ // ciclo for solo impares de 99 a 1
                         Console.Write(control + " ");
                         suma += control;
                     }
@@ -74,7 +78,7 @@ namespace Ciclos
                 case 6:
                     control = 272;
                     Console.WriteLine("While decrementos de 4");
-                    while(control >= 40){
+                    while(control >= 40){ // ciclo while decrementos de 4 desde 272 hasta 40
                         Console.Write(control + " ");
                         suma += control;
                         control -= 4;
@@ -85,7 +89,7 @@ namespace Ciclos
             }
             return 0;
         }
-        static void Menu(){
+        static void Menu(){ // Funcion del menu
             Console.Clear();
             Console.WriteLine("=======Ejemplos de Ciclos=======");
             Console.WriteLine("[1] Numeros del 1 al 100 con ciclo while");
