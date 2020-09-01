@@ -63,11 +63,9 @@ namespace Ciclos
 
                 case 5:
                     Console.WriteLine("For de impares");
-                    for(control = 99; control >= 1; control--){
-                        if((control % 2) != 0){
-                            Console.Write(control + " ");
-                            suma += control;
-                        }
+                    for(control = 99; control >= 1; control-=2){
+                        Console.Write(control + " ");
+                        suma += control;
                     }
                     Console.WriteLine(" ");
                     Console.WriteLine("La suma es: " + suma);
