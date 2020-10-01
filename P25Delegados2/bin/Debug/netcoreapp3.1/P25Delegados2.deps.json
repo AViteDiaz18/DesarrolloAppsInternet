@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "P25Delegados2/1.0.0": {
+        "runtime": {
+          "P25Delegados2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "P25Delegados2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
