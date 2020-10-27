@@ -1,0 +1,59 @@
+@model IEnumerable<ExamenParcial2.Models.tblPayments>
+
+@{
+    ViewData["Title"] = "Pagos";
+}
+
+<h1>Pagos</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IngBookingID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IngCustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IngPaymentMethodID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curPaymentAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.memPaymentAmountComments)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IngBookingID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IngCustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IngPaymentMethodID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.curPaymentAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memPaymentAmountComments)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IngPaymentID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IngPaymentID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IngPaymentID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

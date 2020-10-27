@@ -1,0 +1,72 @@
+@model ExamenParcial2.Models.tblBookings
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>tblBookings</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IngCustomerID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IngCustomerID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dteDateBookingMade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dteDateBookingMade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tmeTimeBookingMade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tmeTimeBookingMade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dteBookedStartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dteBookedStartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dteBookedEndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dteBookedEndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dteTotalPaymentDueDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dteTotalPaymentDueDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.curTotalPaymentDueAmount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.curTotalPaymentDueAmount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dterTotalPaymentMadeOn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dterTotalPaymentMadeOn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.memBookingComments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.memBookingComments)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IngBookingID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

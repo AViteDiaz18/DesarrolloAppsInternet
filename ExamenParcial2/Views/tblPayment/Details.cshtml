@@ -1,0 +1,48 @@
+@model ExamenParcial2.Models.tblPayments
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>tblPayments</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IngBookingID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IngBookingID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IngCustomerID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IngCustomerID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IngPaymentMethodID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IngPaymentMethodID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.curPaymentAmount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.curPaymentAmount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.memPaymentAmountComments)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.memPaymentAmountComments)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IngPaymentID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
