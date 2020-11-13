@@ -164,3 +164,4 @@ namespace ContosoUniversity.Controllers
         }
     }
 }
+// dotnet aspnet-codegenerator identity -u User -fi "Account.Register;Account.Login;Account.Logout" -sqlite -f
