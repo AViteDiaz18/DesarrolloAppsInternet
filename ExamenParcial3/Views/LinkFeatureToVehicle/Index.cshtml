@@ -1,0 +1,57 @@
+@model IEnumerable<ExamenParcial3.Models.LinkFeatureToVehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>FeaturesToVehicles</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by model or manufacter: 
+            <input type="text" name="SearchString" />
+            <input type="submit" value="Search" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fabricante
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeatureID)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleDetail.VehicleModel.VehicleManufacter.ManufacterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleDetail.VehicleModel.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleFeature.FeatureDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.CarRegistration, id2 = item.FeatureID}) |
+                @Html.ActionLink("Delete", "Delete", new {  id = item.CarRegistration, id2 = item.FeatureID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

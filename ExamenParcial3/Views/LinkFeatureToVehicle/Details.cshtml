@@ -1,0 +1,41 @@
+@model ExamenParcial3.Models.LinkFeatureToVehicle
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LinkFeatureToVehicle</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CarRegistration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CarRegistration)
+        </dd>
+        <dt class = "col-sm-2">
+            Fabricante
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(modelItem => modelItem.VehicleDetail.VehicleModel.VehicleManufacter.ManufacterName)
+        </dd>
+        <dt class = "col-sm-2">
+            Modelo
+        </dt>
+        <dd class = "col-sm-10">
+           @Html.DisplayFor(modelItem => modelItem.VehicleDetail.VehicleModel.ModelName)
+        </dd>
+        <dt class = "col-sm-2">
+             @Html.DisplayNameFor(model => model.FeatureID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VehicleFeature.FeatureDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

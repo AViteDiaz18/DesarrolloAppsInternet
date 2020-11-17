@@ -1,0 +1,45 @@
+@model IEnumerable<ExamenParcial3.Models.VehicleColour>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Colours</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ColourName)
+            </th>
+            <th>
+                Autos
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColourName)
+            </td>
+            <td>
+                @{
+                    foreach(var a in item.VehicleDetails){
+                        @a.VehicleModel.VehicleManufacter.ManufacterName @: @a.VehicleModel.ModelName <br />
+                    }
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ColourID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ColourID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ColourID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

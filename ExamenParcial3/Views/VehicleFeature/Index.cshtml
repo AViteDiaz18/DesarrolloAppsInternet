@@ -1,0 +1,46 @@
+@model IEnumerable<ExamenParcial3.Models.VehicleFeature>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Features</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FeatureDescription)
+            </th>
+            <th>
+                Autos
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeatureDescription)
+            </td>
+            <td>
+                @{
+                    foreach(var l in item.LinkFeatureToVehicles){
+                        @l.VehicleDetail.VehicleModel.VehicleManufacter.ManufacterName @: @l.VehicleDetail.VehicleModel.ModelName <br />
+                    }
+                }
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FeatureID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FeatureID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FeatureID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

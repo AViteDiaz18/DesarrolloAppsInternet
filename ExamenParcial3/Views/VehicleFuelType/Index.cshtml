@@ -1,0 +1,45 @@
+@model IEnumerable<ExamenParcial3.Models.VehicleFuelType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>FuelTypes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelTypeName)
+            </th>
+            <th>
+                Autos
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelTypeName)
+            </td>
+            <td>
+                @{
+                    foreach(var d in item.VehicleDetails){
+                        @d.VehicleModel.VehicleManufacter.ManufacterName @: @d.VehicleModel.ModelName <br />
+                    }
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FuelTypeID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FuelTypeID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FuelTypeID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

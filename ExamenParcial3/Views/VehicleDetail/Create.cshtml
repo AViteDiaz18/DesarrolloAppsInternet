@@ -1,0 +1,69 @@
+@model ExamenParcial3.Models.VehicleDetail
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>VehicleDetail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarRegistration" class="control-label"></label>
+                <input asp-for="CarRegistration" class="form-control" />
+                <span asp-validation-for="CarRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelID" class="control-label"></label>
+                <select asp-for="ModelID" class="form-control" asp-items="ViewBag.ModelID">
+                    <option value="">--Select Model--</option>
+                </select>
+                <span asp-validation-for="ModelID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ManufactureYear" class="control-label"></label>
+                <input asp-for="ManufactureYear" class="form-control" />
+                <span asp-validation-for="ManufactureYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ColourID" class="control-label"></label>
+                <select asp-for="ColourID" class="form-control" asp-items="ViewBag.ColourID">
+                    <option value="">--Select Colour--</option>
+                </select>
+                <span asp-validation-for="ColourID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FuelTypeID" class="control-label"></label>
+                <select asp-for="FuelTypeID" class="form-control" asp-items="ViewBag.FuelTypeID">
+                    <option value="">--Select FuelType--</option>
+                </select>
+                <span asp-validation-for="FuelTypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentMilage" class="control-label"></label>
+                <input asp-for="CurrentMilage" class="form-control" />
+                <span asp-validation-for="CurrentMilage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiclePrice" class="control-label"></label>
+                <input asp-for="VehiclePrice" class="form-control" />
+                <span asp-validation-for="VehiclePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
